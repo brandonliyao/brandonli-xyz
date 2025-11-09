@@ -1,0 +1,25 @@
+{{- define "main" -}}
+  {{- partial "hero.html" . -}}
+  
+  {{- $showHero := false -}}
+  {{- if isset .Params "showHero" -}}
+    {{- $showHero = .Params.showHero -}}
+  {{- else if isset site.Params.article "showHero" -}}
+    {{- $showHero = site.Params.article.showHero -}}
+  {{- end -}}
+
+  {{- if $showHero -}}
+    {{- partial "article/components/hero" . -}}
+  {{- end -}}
+
+  <article class="article">
+    {{- partial "article/components/header" (dict "context" . "hideTitle" true) -}}
+    
+    {{- partial "article/components/content" . -}}
+    
+    {{- partial "article/components/footer" . -}}
+  </article>
+
+  {{- partial "article/components/related-content" . -}}
+{{- end -}}
+

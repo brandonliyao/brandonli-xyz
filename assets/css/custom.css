@@ -1,0 +1,10 @@
+/* Hide the About page title */
+header h1.mt-5.text-4xl.font-extrabold {
+  display: none !important;
+}
+
+/* Hide the "no articles" message */
+section.prose.mt-10 p.py-8.border-t {
+  display: none !important;
+}
+
