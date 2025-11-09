@@ -1,0 +1,23 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Brandon Li"
+
+[params]
+  displayName = "English"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  logo = "img/blowfish_logo_transparent.png"
+  description = "Personal website and blog"
+
+[params.author]
+  name = "Brandon Li"
+  email = "your.email@example.com"
+  image = "img/avatar.png"
+  headline = "Welcome to my website"
+  bio = "This is a placeholder bio. Update this with your own information."
+  links = [
+    # { x-twitter = "https://twitter.com/yourusername" },
+    # { github = "https://github.com/yourusername" },
+  ]

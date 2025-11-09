@@ -1,0 +1,29 @@
+{{- if .Site.Params.footer.showMenu -}}
+  {{- if gt (len .Site.Menus.footer) 0 -}}
+    <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 ">
+      <ul class="flex list-none flex-col sm:flex-row">
+        {{- range .Site.Menus.footer -}}
+          <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 ">
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+              href="{{ .URL }}"
+              title="{{ .Name }}">
+              {{ .Name }}
+            </a>
+          </li>
+        {{- end -}}
+      </ul>
+    </nav>
+  {{- end -}}
+{{- end -}}
+
+<div class="flex items-center justify-between">
+  {{- if .Site.Params.footer.showCopyright -}}
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      {{- $year := .Site.Params.footer.copyrightYear | default (now.Year) -}}
+      {{- $author := .Site.Params.author.name | default "Brandon Li" -}}
+      Copyright © {{ $year }} {{ $author }}. All rights reserved.
+    </p>
+  {{- end -}}
+</div>
+
